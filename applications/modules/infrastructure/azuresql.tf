@@ -7,4 +7,9 @@ resource "helm_release" "sqlserver" {
     name  = "service.type"
     value = "ClusterIP"
   }
+
+  set {
+    name  = "sa_password"
+    value = var.database_login_password
+  }
 }
