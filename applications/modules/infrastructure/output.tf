@@ -1,6 +1,6 @@
 output "database_host" {
   description = "Azure SQL Database Host(FQDN)"
-  value       = "${helm_release.sqlserver.name}.${kubernetes_namespace_v1.name.metadata.0.name}.svc.cluster.local"
+  value       = "${helm_release.sqlserver.name}-mssql-latest.${kubernetes_namespace_v1.name.metadata.0.name}.svc.cluster.local"
 }
 
 output "database_login_password" {
