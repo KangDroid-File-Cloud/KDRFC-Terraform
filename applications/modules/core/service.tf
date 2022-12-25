@@ -19,30 +19,30 @@ resource "kubernetes_service_v1" "kdrfc_core" {
   }
 }
 
-resource "kubernetes_ingress_v1" "kdrfc_core" {
-  metadata {
-    name      = "kdrfc-core"
-    namespace = kubernetes_namespace_v1.application_core.metadata.0.name
-    annotations = {
-      "kubernetes.io/ingress.class" = "traefik"
-    }
-  }
+# resource "kubernetes_ingress_v1" "kdrfc_core" {
+#   metadata {
+#     name      = "kdrfc-core"
+#     namespace = kubernetes_namespace_v1.application_core.metadata.0.name
+#     annotations = {
+#       "kubernetes.io/ingress.class" = "traefik"
+#     }
+#   }
 
-  spec {
-    rule {
-      http {
-        path {
-          path = "/"
-          backend {
-            service {
-              name = kubernetes_service_v1.kdrfc_core.metadata.0.name
-              port {
-                number = 80
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
+#   spec {
+#     rule {
+#       http {
+#         path {
+#           path = "/"
+#           backend {
+#             service {
+#               name = kubernetes_service_v1.kdrfc_core.metadata.0.name
+#               port {
+#                 number = 80
+#               }
+#             }
+#           }
+#         }
+#       }
+#     }
+#   }
+# }

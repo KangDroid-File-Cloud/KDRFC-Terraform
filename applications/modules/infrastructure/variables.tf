@@ -8,3 +8,8 @@ variable "database_login_password" {
   type        = string
   sensitive   = true
 }
+
+variable "prometheus_ingress_host" {
+  description = "Prometheus Ingress Host"
+  type        = string
+}
