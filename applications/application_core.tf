@@ -10,6 +10,9 @@ module "application_core" {
   # Redis
   redis_connection_string = module.application_infrastructure.redis_connection_string
 
+  # Ingress Host
+  kdrfc_ingress_host = var.kdrfc_host
+
   depends_on = [
     module.application_infrastructure
   ]
