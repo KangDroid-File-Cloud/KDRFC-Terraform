@@ -23,6 +23,12 @@ resource "kubernetes_deployment_v1" "kdrfc_core" {
           name              = "kdrfc-core"
           image             = "kangdroid/kdrfc:main"
           image_pull_policy = "Always"
+          resources {
+            requests = {
+              cpu    = "250m"
+              memory = "1024Mi"
+            }
+          }
           readiness_probe {
             initial_delay_seconds = 10
             period_seconds        = 20
