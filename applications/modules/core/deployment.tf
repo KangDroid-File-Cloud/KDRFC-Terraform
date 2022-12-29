@@ -56,6 +56,11 @@ resource "kubernetes_deployment_v1" "kdrfc_core" {
             name  = "ConnectionStrings__CacheConnection"
             value = var.redis_connection_string
           }
+
+          env {
+            name  = "ConnectionStrings__MongoDbConnection"
+            value = var.mongodb_connection_string
+          }
         }
       }
     }

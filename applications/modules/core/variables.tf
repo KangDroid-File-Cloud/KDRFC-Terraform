@@ -13,6 +13,11 @@ variable "redis_connection_string" {
   type        = string
 }
 
+variable "mongodb_connection_string" {
+  description = "MongoDB Connection String"
+  type        = string
+}
+
 variable "kdrfc_ingress_host" {
   description = "KDRFC Application Ingress Host"
   type        = string
