@@ -7,7 +7,7 @@ resource "helm_release" "prometheus" {
     <<YAML
     server:
       persistentVolume:
-        storageClass: "openebs-hostpath"
+        storageClass: "openebs-jiva-csi"
       ingress:
         enabled: true
         annotations:

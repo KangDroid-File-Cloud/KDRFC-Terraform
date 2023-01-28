@@ -60,7 +60,7 @@ resource "kubernetes_stateful_set_v1" "mongodb_statefulsets" {
       metadata {
         name = "mongo-persistent-storage"
         annotations = {
-          "volume.beta.kubernetes.io/storage-class" = "openebs-hostpath"
+          "volume.beta.kubernetes.io/storage-class" = "openebs-jiva-csi"
         }
       }
       spec {

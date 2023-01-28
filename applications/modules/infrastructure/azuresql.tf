@@ -12,4 +12,9 @@ resource "helm_release" "sqlserver" {
     name  = "sa_password"
     value = var.database_login_password
   }
+
+  set {
+    name  = "pvc.StorageClass"
+    value = "openebs-jiva-csi"
+  }
 }

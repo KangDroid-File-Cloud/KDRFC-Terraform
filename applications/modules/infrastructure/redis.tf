@@ -13,4 +13,9 @@ resource "helm_release" "redis_cluster" {
     name  = "redisExporter.enabled"
     value = "false"
   }
+
+  set {
+    name  = "storageSpec.volumeClaimTemplate.spec.storageClassName"
+    value = "openebs-jiva-csi"
+  }
 }
