@@ -8,8 +8,19 @@ provider "helm" {
   }
 }
 
+provider "kubectl" {
+  config_path = "~/.kube/config"
+}
+
 terraform {
   backend "azurerm" {
     key = "kubernetes/main_infrastructure.tf"
+  }
+
+  required_providers {
+    kubectl = {
+      source  = "gavinbunney/kubectl"
+      version = ">=1.14.0"
+    }
   }
 }
