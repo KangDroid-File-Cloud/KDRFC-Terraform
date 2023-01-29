@@ -1,0 +1,10 @@
+deployment:
+  name: "mongodb"
+  replicas: 1
+
+mongo:
+  image: "mongo:3.4"
+  storageclass: "openebs-jiva-csi"
+
+mongoSidecar:
+  image: "kangdroid/mongo-sidecar"
