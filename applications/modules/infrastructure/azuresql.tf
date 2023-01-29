@@ -1,6 +1,6 @@
 resource "helm_release" "sqlserver" {
   name      = "sqlserver"
-  chart     = "${path.module}/chart"
+  chart     = "${path.module}/chart/sqlserver"
   namespace = kubernetes_namespace_v1.name.metadata.0.name
 
   set {
