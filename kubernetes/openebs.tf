@@ -18,7 +18,7 @@ resource "kubectl_manifest" "jiva_storage_policy" {
   spec:
     replicaSC: openebs-hostpath
     target:
-      replicationFactor: 2
+      replicationFactor: 1
   YAML
 
   depends_on = [
