@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     role: mongo
-  clusterIp: None
+  clusterIP: None
   ports:
     - port: 27017
       targetPort: 27017

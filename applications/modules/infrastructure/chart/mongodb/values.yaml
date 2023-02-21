@@ -3,7 +3,7 @@ deployment:
   replicas: 1
 
 mongo:
-  image: "mongo:3.4"
+  image: "mongo:4.4"
   storageclass: "openebs-jiva-csi"
 
 mongoSidecar:
