@@ -61,6 +61,50 @@ resource "kubernetes_deployment_v1" "kdrfc_core" {
             name  = "ConnectionStrings__MongoDbConnection"
             value = var.mongodb_connection_string
           }
+
+          env {
+            name = "OAuth__Google__ClientId"
+            value_from {
+              secret_key_ref {
+                name     = "oauth-secrets"
+                key      = "google-client-id"
+                optional = true
+              }
+            }
+          }
+
+          env {
+            name = "OAuth__Google__ClientSecret"
+            value_from {
+              secret_key_ref {
+                name     = "oauth-secrets"
+                key      = "google-client-secret"
+                optional = true
+              }
+            }
+          }
+
+          env {
+            name = "OAuth__Kakao__ClientId"
+            value_from {
+              secret_key_ref {
+                name     = "oauth-secrets"
+                key      = "kakao-client-id"
+                optional = true
+              }
+            }
+          }
+
+          env {
+            name = "OAuth__Kakao__ClientSecret"
+            value_from {
+              secret_key_ref {
+                name     = "oauth-secrets"
+                key      = "kakao-client-secret"
+                optional = true
+              }
+            }
+          }
         }
       }
     }
