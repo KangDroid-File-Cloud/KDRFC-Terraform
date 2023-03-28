@@ -32,7 +32,7 @@ service:
   port: 1433
 
 pvc:
- StorageClass: "openebs-hostpath"
+ StorageClass: "local-path"
  userdbaccessMode: ReadWriteOnce
  userdbsize: 5Gi
  userlogaccessMode: ReadWriteOnce

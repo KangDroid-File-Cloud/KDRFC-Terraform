@@ -15,6 +15,6 @@ resource "helm_release" "sqlserver" {
 
   set {
     name  = "pvc.StorageClass"
-    value = "openebs-jiva-csi"
+    value = "local-path"
   }
 }

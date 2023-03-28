@@ -16,6 +16,6 @@ resource "helm_release" "redis_cluster" {
 
   set {
     name  = "storageSpec.volumeClaimTemplate.spec.storageClassName"
-    value = "openebs-jiva-csi"
+    value = "local-path"
   }
 }
